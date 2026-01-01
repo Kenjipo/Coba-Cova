@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunGirl Zone - Tempat Main & Ketawa!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --soft-pink: #ffb8d9;
+            --light-pink: #ffe6f2;
+            --warm-pink: #ff85b3;
+            --soft-purple: #d9b8ff;
+            --light-purple: #f2e6ff;
+            --soft-blue: #b8d9ff;
+            --light-blue: #e6f2ff;
+            --soft-green: #b8ffd9;
+            --light-green: #e6fff2;
+            --soft-yellow: #fff0b8;
+            --light-yellow: #ffffe6;
+            --soft-peach: #ffd9b8;
+            --light-peach: #fff2e6;
+            --text-color: #5a3a5a;
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--light-pink);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--soft-pink), var(--soft-purple));
+            padding: 20px 0;
+            border-bottom: 5px solid var(--warm-pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.8rem;
+            color: white;
+            background-color: var(--warm-pink);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: white;
+            color: var(--warm-pink);
+            transform: translateY(-3px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(to right, var(--light-purple), var(--light-blue));
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--warm-pink);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-color);
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--warm-pink);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 133, 179, 0.4);
+            background-color: #ff66a3;
+        }
+
+        /* Game Section */
+        .game-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            border-radius: 25px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .game-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--soft-pink), var(--soft-purple), var(--soft-blue));
+            border-radius: 25px 25px 0 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--warm-pink);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--soft-pink), var(--soft-purple));
+            border-radius: 2px;
+        }
+
+        /* Game Container */
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, var(--light-blue), var(--light-purple));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-icon {
+            font-size: 3.5rem;
+            color: var(--warm-pink);
+            margin-bottom: 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .game-card p {
+            margin-bottom: 20px;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        .game-btn {
+            background-color: var(--warm-pink);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .game-btn:hover {
+            background-color: #ff66a3;
+            transform: scale(1.05);
+        }
+
+        /* Funny Quotes Section */
+        .quotes-section {
+            padding: 40px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, var(--light-peach), var(--light-yellow));
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+        }
+
+        .quotes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .quote-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            position: relative;
+            border-left: 6px solid var(--soft-pink);
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-card i {
+            font-size: 2rem;
+            color: var(--soft-pink);
+            margin-bottom: 15px;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--warm-pink);
+        }
+
+        .quote-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--soft-purple);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Game Modal */
+        .game-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 25px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--warm-pink);
+            background-color: var(--light-pink);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: var(--warm-pink);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--soft-pink), var(--soft-purple));
+            color: white;
+            padding: 50px 0 20px;
+            border-top: 5px solid var(--warm-pink);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: white;
+            color: var(--warm-pink);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+        }
+
+        /* Game Specific Styles */
+        .game-area {
+            background-color: var(--light-pink);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--warm-pink);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Game 1: Emoji Match */
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .emoji-card {
+            background-color: white;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            user-select: none;
+        }
+
+        .emoji-card:hover {
+            transform: scale(1.05);
+        }
+
+        .emoji-card.flipped {
+            background-color: var(--soft-blue);
+            transform: rotateY(180deg);
+        }
+
+        .emoji-card.matched {
+            background-color: var(--soft-green);
+            cursor: default;
+        }
+
+        /* Game 2: Word Puzzle */
+        .puzzle-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .puzzle-question {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .puzzle-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .puzzle-option {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .puzzle-option:hover {
+            background-color: var(--soft-blue);
+            transform: translateY(-5px);
+        }
+
+        .puzzle-option.correct {
+            background-color: var(--soft-green);
+            color: white;
+        }
+
+        .puzzle-option.wrong {
+            background-color: var(--soft-pink);
+            color: white;
+        }
+
+        /* Game 3: Click Frenzy */
+        .click-area {
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .click-target {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--warm-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.1s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            user-select: none;
+        }
+
+        .click-target:active {
+            transform: scale(0.9);
+        }
+
+        /* Game 4: Drag & Drop */
+        .drag-drop-area {
+            display: flex;
+            width: 100%;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .drag-items {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .drag-item {
+            background-color: var(--soft-blue);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: grab;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .drag-item:active {
+            cursor: grabbing;
+        }
+
+        .drop-zone {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-green);
+            padding: 20px;
+            border-radius: 20px;
+            min-height: 200px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .drop-slot {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 60px;
+            border: 2px dashed var(--soft-purple);
+            transition: all 0.3s;
+        }
+
+        .drop-slot.active {
+            border-color: var(--warm-pink);
+            background-color: var(--light-pink);
+        }
+
+        /* Game 5: Reaction Test */
+        .reaction-area {
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reaction-button {
+            position: absolute;
+            padding: 20px 40px;
+            border-radius: 15px;
+            background-color: var(--soft-green);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .reaction-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Game 6: Typing Game */
+        .typing-area {
+            width: 100%;
+            background-color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-text {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
+        .typing-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 15px;
+            border: 2px solid var(--soft-blue);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: var(--warm-pink);
+            box-shadow: 0 0 0 3px rgba(255, 133, 179, 0.2);
+        }
+
+        /* Quotes Button */
+        .more-quotes-btn {
+            display: block;
+            margin: 30px auto 0;
+            background-color: var(--warm-pink);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .more-quotes-btn:hover {
+            background-color: #ff66a3;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .games-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .quotes-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                margin-top: 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                border-radius: 15px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav a {
+                background-color: var(--soft-pink);
+                margin-bottom: 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .game-section, .quotes-section {
+                padding: 25px;
+            }
+            
+            .emoji-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+            
+            .hero-btn {
+                padding: 14px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .game-card {
+                min-height: 250px;
+            }
+            
+            .quotes-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .puzzle-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .emoji-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <h1>FunGirl Zone</h1>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#games" class="active"><i class="fas fa-gamepad"></i> Games</a></li>
+                    <li><a href="#quotes"><i class="fas fa-quote-right"></i> Kata-kata Lucu</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Selamat datang di dunia game & kata-kata lucu! 🎮😄</h2>
+            <p>Tempat di mana kamu bisa bermain game seru, membaca kata-kata lucu, dan menghabiskan waktu dengan menyenangkan!</p>
+            <button class="hero-btn" id="randomGameBtn">Mainkan Game Acak 🎲</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Games Section -->
+        <section class="game-section" id="games">
+            <h2 class="section-title">Pilih Game Favoritmu 🎮</h2>
+            <div class="games-container">
+                <!-- Game 1: Emoji Match -->
+                <div class="game-card">
+                    <div class="game-icon">🧠</div>
+                    <h3>Emoji Match</h3>
+                    <p>Temukan pasangan emoji yang sama sebelum waktu habis!</p>
+                    <button class="game-btn" data-game="emojiMatch">Main Sekarang</button>
+                </div>
+                
+                <!-- Game 2: Tebak Kata Lucu -->
+                <div class="game-card">
+                    <div class="game-icon">💬</div>
+                    <h3>Tebak Kata Lucu</h3>
+                    <p>Tebak kata yang tepat untuk melengkapi kalimat lucu!</p>
+                    <button class="game-btn" data-game="wordPuzzle">Main Sekarang</button>
+                </div>
+                
+                <!-- Game 3: Klik Cepat -->
+                <div class="game-card">
+                    <div class="game-icon">⚡</div>
+                    <h3>Klik Cepat</h3>
+                    <p>Klik target sebanyak mungkin dalam waktu 30 detik!</p>
+                    <button class="game-btn" data-game="clickFrenzy">Main Sekarang</button>
+                </div>
+                
+                <!-- Game 4: Drag & Drop Kata -->
+                <div class="game-card">
+                    <div class="game-icon">📝</div>
+                    <h3>Drag & Drop Kata</h3>
+                    <p>Seret kata-kata untuk membuat kalimat lucu yang benar!</p>
+                    <button class="game-btn" data-game="dragDrop">Main Sekarang</button>
+                </div>
+                
+                <!-- Game 5: Tes Reaksi -->
+                <div class="game-card">
+                    <div class="game-icon">⏱️</div>
+                    <h3>Tes Reaksi</h3>
+                    <p>Klik tombol secepat mungkin saat muncul di layar!</p>
+                    <button class="game-btn" data-game="reactionTest">Main Sekarang</button>
+                </div>
+                
+                <!-- Game 6: Ketik Cepat -->
+                <div class="game-card">
+                    <div class="game-icon">⌨️</div>
+                    <h3>Ketik Cepat</h3>
+                    <p>Ketik ulang kata-kata lucu secepat dan seakurat mungkin!</p>
+                    <button class="game-btn" data-game="typingGame">Main Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funny Quotes Section -->
+        <section class="quotes-section" id="quotes">
+            <h2 class="section-title">Kata-kata Lucu & Bijak 😄✨</h2>
+            <div class="quotes-container" id="quotesContainer">
+                <!-- Quotes akan dimuat via JavaScript -->
+            </div>
+            <button class="more-quotes-btn" id="moreQuotesBtn">Tampilkan Lebih Banyak Kata-kata 🔄</button>
+        </section>
+
+        <!-- About Section -->
+        <section class="game-section" id="about">
+            <h2 class="section-title">Tentang FunGirl Zone 💖</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    FunGirl Zone dibuat untuk memberikan hiburan dan tawa melalui game-game seru dan kata-kata lucu. 
+                    Kami percaya bahwa tertawa adalah obat terbaik dan game adalah cara terbaik untuk menghilangkan stres!
+                </p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+                    <div style="background-color: var(--light-blue); padding: 20px; border-radius: 15px; flex: 1; min-width: 200px;">
+                        <i class="fas fa-smile" style="font-size: 2.5rem; color: var(--warm-pink); margin-bottom: 10px;"></i>
+                        <h3 style="color: var(--warm-pink); margin-bottom: 10px;">Hiburan</h3>
+                        <p>Game-game seru untuk menghilangkan kebosanan</p>
+                    </div>
+                    <div style="background-color: var(--light-green); padding: 20px; border-radius: 15px; flex: 1; min-width: 200px;">
+                        <i class="fas fa-laugh" style="font-size: 2.5rem; color: var(--warm-pink); margin-bottom: 10px;"></i>
+                        <h3 style="color: var(--warm-pink); margin-bottom: 10px;">Tawa</h3>
+                        <p>Kata-kata lucu yang bikin ketawa sepanjang hari</p>
+                    </div>
+                    <div style="background-color: var(--light-purple); padding: 20px; border-radius: 15px; flex: 1; min-width: 200px;">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--warm-pink); margin-bottom: 10px;"></i>
+                        <h3 style="color: var(--warm-pink); margin-bottom: 10px;">Bahagia</h3>
+                        <p>Membuat hari-harimu lebih cerah dan berwarna</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="game-section" id="contact">
+            <h2 class="section-title">Kontak & Saran 💌</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                    Punya saran untuk game baru atau kata-kata lucu? Kirim pesan kepada kami!
+                </p>
+                <div style="background-color: var(--light-peach); padding: 30px; border-radius: 20px;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                        <input type="text" placeholder="Nama kamu" style="flex: 1; min-width: 200px; padding: 15px; border-radius: 10px; border: 2px solid var(--soft-blue); font-size: 1rem;">
+                        <input type="email" placeholder="Email kamu" style="flex: 1; min-width: 200px; padding: 15px; border-radius: 10px; border: 2px solid var(--soft-blue); font-size: 1rem;">
+                    </div>
+                    <textarea placeholder="Pesan atau saran kamu..." rows="5" style="width: 100%; padding: 15px; border-radius: 10px; border: 2px solid var(--soft-blue); font-size: 1rem; margin-bottom: 20px;"></textarea>
+                    <button class="hero-btn" style="width: 100%;">Kirim Pesan ✨</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FunGirl Zone</h3>
+                    <p>Tempat main game & baca kata-kata lucu untuk perempuan yang ingin tertawa dan bersenang-senang!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Game Populer</h3>
+                    <p>🎮 Emoji Match</p>
+                    <p>💬 Tebak Kata Lucu</p>
+                    <p>⚡ Klik Cepat</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p style="margin-top: 20px;">Email: PTD.Rasyid.022@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 FunGirl Zone. Dibuat dengan ❤️ untuk perempuan di seluruh Indonesia!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Game Modals -->
+    <!-- Emoji Match Game -->
+    <div class="game-modal" id="emojiMatchModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="emojiMatchModal">&times;</span>
+            <h2 class="modal-title">Emoji Match 🧠</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="emojiScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="emojiTime">60</div>
+                    <div class="stat-label">Waktu</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="emojiMatches">0/8</div>
+                    <div class="stat-label">Pasangan</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="emoji-grid" id="emojiGrid">
+                    <!-- Emoji cards will be generated by JavaScript -->
+                </div>
+            </div>
+            <button class="game-btn" id="startEmojiGame">Mulai Game</button>
+        </div>
+    </div>
+
+    <!-- Word Puzzle Game -->
+    <div class="game-modal" id="wordPuzzleModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="wordPuzzleModal">&times;</span>
+            <h2 class="modal-title">Tebak Kata Lucu 💬</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="puzzleScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="puzzleQuestion">1/10</div>
+                    <div class="stat-label">Soal</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="puzzleCorrect">0</div>
+                    <div class="stat-label">Benar</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="puzzle-container">
+                    <div class="puzzle-question" id="puzzleQuestionText">
+                        <!-- Question will be loaded here -->
+                    </div>
+                    <div class="puzzle-options" id="puzzleOptions">
+                        <!-- Options will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="game-btn" id="nextPuzzleBtn">Soal Berikutnya</button>
+        </div>
+    </div>
+
+    <!-- Click Frenzy Game -->
+    <div class="game-modal" id="clickFrenzyModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="clickFrenzyModal">&times;</span>
+            <h2 class="modal-title">Klik Cepat ⚡</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="clickScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="clickTime">30</div>
+                    <div class="stat-label">Waktu</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="clickTargets">0</div>
+                    <div class="stat-label">Target</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="click-area" id="clickArea">
+                    <!-- Click targets will appear here -->
+                </div>
+            </div>
+            <button class="game-btn" id="startClickGame">Mulai Game</button>
+        </div>
+    </div>
+
+    <!-- Drag & Drop Game -->
+    <div class="game-modal" id="dragDropModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="dragDropModal">&times;</span>
+            <h2 class="modal-title">Drag & Drop Kata 📝</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="dragScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="dragCompleted">0/5</div>
+                    <div class="stat-label">Selesai</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="dragAttempts">3</div>
+                    <div class="stat-label">Kesempatan</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="drag-drop-area">
+                    <div class="drag-items" id="dragItems">
+                        <!-- Drag items will be loaded here -->
+                    </div>
+                    <div class="drop-zone" id="dropZone">
+                        <!-- Drop slots will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="game-btn" id="checkDragGame">Periksa Jawaban</button>
+        </div>
+    </div>
+
+    <!-- Reaction Test Game -->
+    <div class="game-modal" id="reactionTestModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="reactionTestModal">&times;</span>
+            <h2 class="modal-title">Tes Reaksi ⏱️</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="reactionScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="reactionTime">0.00s</div>
+                    <div class="stat-label">Waktu Reaksi</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="reactionAttempts">0/10</div>
+                    <div class="stat-label">Percobaan</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="reaction-area" id="reactionArea">
+                    <button class="reaction-button" id="reactionButton" style="display: none;">KLIK!</button>
+                </div>
+            </div>
+            <button class="game-btn" id="startReactionGame">Mulai Tes</button>
+        </div>
+    </div>
+
+    <!-- Typing Game -->
+    <div class="game-modal" id="typingGameModal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="typingGameModal">&times;</span>
+            <h2 class="modal-title">Ketik Cepat ⌨️</h2>
+            <div class="game-stats">
+                <div class="stat">
+                    <div class="stat-value" id="typingScore">0</div>
+                    <div class="stat-label">Skor</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="typingTime">60</div>
+                    <div class="stat-label">Waktu</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="typingWords">0</div>
+                    <div class="stat-label">Kata</div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="typing-area">
+                    <div class="typing-text" id="typingText">
+                        <!-- Text to type will appear here -->
+                    </div>
+                    <input type="text" class="typing-input" id="typingInput" placeholder="Ketik teks di atas di sini...">
+                    <div style="text-align: center;">
+                        <span style="color: #666;">Akurasi: </span>
+                        <span id="typingAccuracy">100%</span>
+                    </div>
+                </div>
+            </div>
+            <button class="game-btn" id="startTypingGame">Mulai Mengetik</button>
+        </div>
+    </div>
+
+    <script>
+        // ============ MOBILE MENU ============
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+        
+        // ============ RANDOM GAME BUTTON ============
+        document.getElementById('randomGameBtn').addEventListener('click', () => {
+            const games = ['emojiMatch', 'wordPuzzle', 'clickFrenzy', 'dragDrop', 'reactionTest', 'typingGame'];
+            const randomGame = games[Math.floor(Math.random() * games.length)];
+            openGameModal(randomGame);
+        });
+        
+        // ============ GAME MODAL CONTROLS ============
+        const gameModals = {
+            emojiMatch: document.getElementById('emojiMatchModal'),
+            wordPuzzle: document.getElementById('wordPuzzleModal'),
+            clickFrenzy: document.getElementById('clickFrenzyModal'),
+            dragDrop: document.getElementById('dragDropModal'),
+            reactionTest: document.getElementById('reactionTestModal'),
+            typingGame: document.getElementById('typingGameModal')
+        };
+        
+        // Open game modal when clicking on game buttons
+        document.querySelectorAll('.game-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const game = this.dataset.game;
+                openGameModal(game);
+            });
+        });
+        
+        // Close modal when clicking on close button
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modal = this.dataset.modal;
+                closeGameModal(modal);
+            });
+        });
+        
+        // Close modal when clicking outside
+        Object.keys(gameModals).forEach(game => {
+            gameModals[game].addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeGameModal(game);
+                }
+            });
+        });
+        
+        function openGameModal(game) {
+            // Close all modals first
+            Object.keys(gameModals).forEach(g => {
+                gameModals[g].style.display = 'none';
+            });
+            
+            // Open the selected game modal
+            gameModals[game].style.display = 'flex';
+            
+            // Initialize the game
+            switch(game) {
+                case 'emojiMatch':
+                    initEmojiGame();
+                    break;
+                case 'wordPuzzle':
+                    initWordPuzzle();
+                    break;
+                case 'clickFrenzy':
+                    initClickFrenzy();
+                    break;
+                case 'dragDrop':
+                    initDragDrop();
+                    break;
+                case 'reactionTest':
+                    initReactionTest();
+                    break;
+                case 'typingGame':
+                    initTypingGame();
+                    break;
+            }
+        }
+        
+        function closeGameModal(game) {
+            gameModals[game].style.display = 'none';
+            
+            // Stop any ongoing game timers
+            clearInterval(gameTimers[game]);
+        }
+        
+        // ============ FUNNY QUOTES ============
+        const funnyQuotes = [
+            {
+                text: "Hidup itu seperti sepeda, jika tidak mengayuh, ya jatuh. Kalau mau aman, mending naik mobil!",
+                author: "Cewek Bijak",
+                category: "Hidup"
+            },
+            {
+                text: "Jangan bandingkan dirimu dengan orang lain. Bandingkan dengan dirimu kemarin. Eh, tapi kalau kemarin lebih buruk, ya syukurlah!",
+                author: "Mbak Motivator",
+                category: "Motivasi"
+            },
+            {
+                text: "Daripada galau mikirin dia yang gak jelas, mending beli es krim yang rasanya jelas!",
+                author: "Sahabat Baik",
+                category: "Cinta"
+            },
+            {
+                text: "Kata orang, cinta butuh pengorbanan. Tapi kok kayaknya yang dikorbankan cuma dompetku ya?",
+                author: "Dompet Kering",
+                category: "Cinta"
+            },
+            {
+                text: "Jangan terlalu serius, nanti cepat tua. Mending ketawa, biar awet muda!",
+                author: "Awet Muda Club",
+                category: "Kesehatan"
+            },
+            {
+                text: "Hidup ini singkat, jadi jangan buang waktu untuk hal-hal yang tidak penting. Kecuali nonton drakor, itu penting banget!",
+                author: "Drakor Lovers",
+                category: "Hiburan"
+            },
+            {
+                text: "Kalau mau sukses, harus rajin belajar. Tapi kalau udah capek belajar, istirahat dulu sambil nonton YouTube juga gak papa!",
+                author: "Siswa Jenius",
+                category: "Pendidikan"
+            },
+            {
+                text: "Jangan pernah menyerah! Kecuali kalau lagi diet, terus ada promo makanan enak, ya menyerah aja deh!",
+                author: "Food Lover",
+                category: "Makanan"
+            },
+            {
+                text: "Kesalahan terbesar dalam hidup adalah takut membuat kesalahan. Tapi kalau kesalahannya mahal, mending takut sih!",
+                author: "Filosofi Sederhana",
+                category: "Filosofi"
+            },
+            {
+                text: "Jadilah dirimu sendiri, karena jadi orang lain itu sudah ada yang punya. Lagian susah juga nyari KTP-nya!",
+                author: "Originalitas",
+                category: "Karakter"
+            },
+            {
+                text: "Uang bukan segalanya, tapi segalanya butuh uang. Contohnya: beli segalanya butuh uang!",
+                author: "Realistis",
+                category: "Keuangan"
+            },
+            {
+                text: "Jangan mengharapkan perubahan jika kamu tidak melakukan apa-apa. Kecuali mengharapkan perubahan cuaca, itu bisa!",
+                author: "Cuaca Hati",
+                category: "Perubahan"
+            },
+            {
+                text: "Tertawalah sebelum tertawa itu dilarang. Eh tapi kalau di perpustakaan, emang dilarang sih!",
+                author: "Penjaga Perpustakaan",
+                category: "Humor"
+            },
+            {
+                text: "Mimpi yang besar dimulai dengan langkah kecil. Tapi kalau langkahnya kecil banget, kapan sampai sih?",
+                author: "Pemimpi Besar",
+                category: "Mimpi"
+            },
+            {
+                text: "Cintailah dirimu sendiri sebelum mencintai orang lain. Karena kalau nggak, nanti siapa yang mau bayarin makan kamu?",
+                author: "Self Love Expert",
+                category: "Cinta Diri"
+            }
+        ];
+        
+        let currentQuoteIndex = 0;
+        
+        function loadQuotes() {
+            const quotesContainer = document.getElementById('quotesContainer');
+            quotesContainer.innerHTML = '';
+            
+            // Show 6 quotes at a time
+            for (let i = currentQuoteIndex; i < currentQuoteIndex + 6 && i < funnyQuotes.length; i++) {
+                const quote = funnyQuotes[i];
+                const quoteCard = document.createElement('div');
+                quoteCard.className = 'quote-card fade-in';
+                quoteCard.innerHTML = `
+                    <div class="quote-category">${quote.category}</div>
+                    <i class="fas fa-quote-left"></i>
+                    <div class="quote-text">"${quote.text}"</div>
+                    <div class="quote-author">- ${quote.author}</div>
+                `;
+                quotesContainer.appendChild(quoteCard);
+            }
+            
+            currentQuoteIndex += 6;
+            if (currentQuoteIndex >= funnyQuotes.length) {
+                currentQuoteIndex = 0;
+            }
+        }
+        
+        document.getElementById('moreQuotesBtn').addEventListener('click', loadQuotes);
+        
+        // Load initial quotes
+        loadQuotes();
+        
+        // ============ GAME 1: EMOJI MATCH ============
+        let emojiScore = 0;
+        let emojiTime = 60;
+        let emojiMatches = 0;
+        let emojiCards = [];
+        let flippedCards = [];
+        let emojiGameActive = false;
+        let emojiTimer;
+        
+        const emojiPairs = ['😊', '😂', '🥰', '😎', '🤔', '🥳', '😴', '🤩'];
+        
+        function initEmojiGame() {
+            emojiScore = 0;
+            emojiTime = 60;
+            emojiMatches = 0;
+            emojiCards = [];
+            flippedCards = [];
+            emojiGameActive = false;
+            
+            document.getElementById('emojiScore').textContent = emojiScore;
+            document.getElementById('emojiTime').textContent = emojiTime;
+            document.getElementById('emojiMatches').textContent = `${emojiMatches}/8`;
+            
+            // Create emoji grid
+            const emojiGrid = document.getElementById('emojiGrid');
+            emojiGrid.innerHTML = '';
+            
+            // Duplicate and shuffle emojis
+            let emojis = [...emojiPairs, ...emojiPairs];
+            emojis = emojis.sort(() => Math.random() - 0.5);
+            
+            // Create cards
+            emojis.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.className = 'emoji-card';
+                card.dataset.emoji = emoji;
+                card.dataset.index = index;
+                card.textContent = '❓';
+                
+                card.addEventListener('click', flipEmojiCard);
+                emojiGrid.appendChild(card);
+                emojiCards.push(card);
+            });
+            
+            // Reset start button
+            document.getElementById('startEmojiGame').textContent = 'Mulai Game';
+            document.getElementById('startEmojiGame').onclick = startEmojiGame;
+        }
+        
+        function flipEmojiCard() {
+            if (!emojiGameActive) return;
+            if (flippedCards.length >= 2) return;
+            if (this.classList.contains('flipped') || this.classList.contains('matched')) return;
+            
+            this.classList.add('flipped');
+            this.textContent = this.dataset.emoji;
+            flippedCards.push(this);
+            
+            if (flippedCards.length === 2) {
+                checkEmojiMatch();
+            }
+        }
+        
+        function checkEmojiMatch() {
+            const [card1, card2] = flippedCards;
+            
+            if (card1.dataset.emoji === card2.dataset.emoji) {
+                // Match found
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                emojiMatches++;
+                emojiScore += 10;
+                
+                document.getElementById('emojiScore').textContent = emojiScore;
+                document.getElementById('emojiMatches').textContent = `${emojiMatches}/8`;
+                
+                if (emojiMatches === 8) {
+                    clearInterval(emojiTimer);
+                    emojiGameActive = false;
+                    setTimeout(() => {
+                        alert(`Selamat! Kamu menang! Skor akhir: ${emojiScore}`);
+                    }, 500);
+                }
+                
+                flippedCards = [];
+            } else {
+                // Not a match
+                setTimeout(() => {
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    card1.textContent = '❓';
+                    card2.textContent = '❓';
+                    flippedCards = [];
+                }, 1000);
+            }
+        }
+        
+        function startEmojiGame() {
+            if (emojiGameActive) return;
+            
+            emojiGameActive = true;
+            document.getElementById('startEmojiGame').textContent = 'Game Berlangsung...';
+            document.getElementById('startEmojiGame').disabled = true;
+            
+            // Start timer
+            emojiTimer = setInterval(() => {
+                emojiTime--;
+                document.getElementById('emojiTime').textContent = emojiTime;
+                
+                if (emojiTime <= 0) {
+                    clearInterval(emojiTimer);
+                    emojiGameActive = false;
+                    document.getElementById('startEmojiGame').disabled = false;
+                    document.getElementById('startEmojiGame').textContent = 'Main Lagi';
+                    alert(`Waktu habis! Skor akhir: ${emojiScore}`);
+                }
+            }, 1000);
+        }
+        
+        // ============ GAME 2: WORD PUZZLE ============
+        let puzzleScore = 0;
+        let puzzleQuestionNum = 1;
+        let puzzleCorrect = 0;
+        let currentPuzzle = {};
+        
+        const wordPuzzles = [
+            {
+                question: "Lebih baik terlambat daripada ...",
+                options: ["Pulang cepat", "Tidak datang", "Salah alamat", "Pakai sepatu"],
+                answer: "Tidak datang"
+            },
+            {
+                question: "Air tenang menghanyutkan, air ... membawa berkah",
+                options: ["Dingin", "Panas", "Keruh", "Bersih"],
+                answer: "Bersih"
+            },
+            {
+                question: "Tak kenal maka tak sayang, tak sayang maka tak ...",
+                options: ["Cinta", "Rindu", "Tahu", "Dagang"],
+                answer: "Cinta"
+            },
+            {
+                question: "Sambil menyelam minum air, sambil tidur ... mimpi",
+                options: ["Lihat", "Dapat", "Makan", "Punya"],
+                answer: "Dapat"
+            },
+            {
+                question: "Besar pasak daripada tiang, besar ... daripada kemampuan",
+                options: ["Gaya", "Hutang", "Mulut", "Keinginan"],
+                answer: "Keinginan"
+            },
+            {
+                question: "Ada gula ada semut, ada ... ada masalah",
+                options: ["Cinta", "Uang", "Wanita", "Pria"],
+                answer: "Uang"
+            },
+            {
+                question: "Bagai air di daun talas, bagai ... di atas batu",
+                options: ["Minyak", "Air", "Pasir", "Debu"],
+                answer: "Minyak"
+            },
+            {
+                question: "Sepandai-pandainya tupai melompat, sekali waktu ... juga",
+                options: ["Jatuh", "Lelah", "Lupa", "Salah"],
+                answer: "Jatuh"
+            },
+            {
+                question: "Tak ada gading yang tak retak, tak ada ... yang sempurna",
+                options: ["Manusia", "Cinta", "Hidup", "Wajah"],
+                answer: "Manusia"
+            },
+            {
+                question: "Bersatu kita teguh, bercerai kita ...",
+                options: ["Runtuh", "Sendiri", "Lemah", "Bingung"],
+                answer: "Runtuh"
+            }
+        ];
+        
+        function initWordPuzzle() {
+            puzzleScore = 0;
+            puzzleQuestionNum = 1;
+            puzzleCorrect = 0;
+            
+            document.getElementById('puzzleScore').textContent = puzzleScore;
+            document.getElementById('puzzleQuestion').textContent = `${puzzleQuestionNum}/10`;
+            document.getElementById('puzzleCorrect').textContent = puzzleCorrect;
+            
+            loadPuzzle();
+            
+            document.getElementById('nextPuzzleBtn').textContent = 'Soal Berikutnya';
+            document.getElementById('nextPuzzleBtn').onclick = nextPuzzle;
+        }
+        
+        function loadPuzzle() {
+            // Get a random puzzle
+            const randomIndex = Math.floor(Math.random() * wordPuzzles.length);
+            currentPuzzle = wordPuzzles[randomIndex];
+            
+            document.getElementById('puzzleQuestionText').textContent = currentPuzzle.question;
+            
+            // Shuffle options
+            const options = [...currentPuzzle.options].sort(() => Math.random() - 0.5);
+            
+            const optionsContainer = document.getElementById('puzzleOptions');
+            optionsContainer.innerHTML = '';
+            
+            options.forEach(option => {
+                const optionBtn = document.createElement('div');
+                optionBtn.className = 'puzzle-option';
+                optionBtn.textContent = option;
+                
+                optionBtn.addEventListener('click', function() {
+                    if (this.classList.contains('correct') || this.classList.contains('wrong')) return;
+                    
+                    // Check answer
+                    if (this.textContent === currentPuzzle.answer) {
+                        this.classList.add('correct');
+                        puzzleScore += 10;
+                        puzzleCorrect++;
+                        document.getElementById('puzzleScore').textContent = puzzleScore;
+                        document.getElementById('puzzleCorrect').textContent = puzzleCorrect;
+                    } else {
+                        this.classList.add('wrong');
+                        // Highlight correct answer
+                        document.querySelectorAll('.puzzle-option').forEach(btn => {
+                            if (btn.textContent === currentPuzzle.answer) {
+                                btn.classList.add('correct');
+                            }
+                        });
+                    }
+                    
+                    // Disable all options
+                    document.querySelectorAll('.puzzle-option').forEach(btn => {
+                        btn.style.pointerEvents = 'none';
+                    });
+                });
+                
+                optionsContainer.appendChild(optionBtn);
+            });
+        }
+        
+        function nextPuzzle() {
+            if (puzzleQuestionNum >= 10) {
+                alert(`Permainan selesai! Skor akhir: ${puzzleScore} (${puzzleCorrect}/10 benar)`);
+                initWordPuzzle();
+                return;
+            }
+            
+            puzzleQuestionNum++;
+            document.getElementById('puzzleQuestion').textContent = `${puzzleQuestionNum}/10`;
+            
+            // Re-enable options
+            document.querySelectorAll('.puzzle-option').forEach(btn => {
+                btn.style.pointerEvents = 'auto';
+                btn.classList.remove('correct', 'wrong');
+            });
+            
+            loadPuzzle();
+        }
+        
+        // ============ GAME 3: CLICK FRENZY ============
+        let clickScore = 0;
+        let clickTime = 30;
+        let clickTargets = 0;
+        let clickGameActive = false;
+        let clickTimer;
+        let clickGameInterval;
+        
+        function initClickFrenzy() {
+            clickScore = 0;
+            clickTime = 30;
+            clickTargets = 0;
+            clickGameActive = false;
+            
+            document.getElementById('clickScore').textContent = clickScore;
+            document.getElementById('clickTime').textContent = clickTime;
+            document.getElementById('clickTargets').textContent = clickTargets;
+            
+            // Clear click area
+            const clickArea = document.getElementById('clickArea');
+            clickArea.innerHTML = '';
+            
+            // Reset start button
+            document.getElementById('startClickGame').textContent = 'Mulai Game';
+            document.getElementById('startClickGame').onclick = startClickGame;
+        }
+        
+        function createClickTarget() {
+            if (!clickGameActive) return;
+            
+            const clickArea = document.getElementById('clickArea');
+            const target = document.createElement('div');
+            target.className = 'click-target';
+            
+            // Random emoji
+            const emojis = ['🎯', '⭐', '🎁', '🎨', '🍦', '🌸', '💖', '✨'];
+            target.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Random position
+            const size = clickArea.getBoundingClientRect();
+            const x = Math.random() * (size.width - 70);
+            const y = Math.random() * (size.height - 70);
+            
+            target.style.left = `${x}px`;
+            target.style.top = `${y}px`;
+            
+            // Random color
+            const colors = ['#ff85b3', '#d9b8ff', '#b8d9ff', '#b8ffd9', '#fff0b8', '#ffd9b8'];
+            target.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Click event
+            target.addEventListener('click', function() {
+                if (!clickGameActive) return;
+                
+                // Increase score
+                clickScore += 5;
+                clickTargets++;
+                document.getElementById('clickScore').textContent = clickScore;
+                document.getElementById('clickTargets').textContent = clickTargets;
+                
+                // Remove target with effect
+                this.style.transform = 'scale(1.5)';
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    if (this.parentNode) {
+                        this.parentNode.removeChild(this);
+                    }
+                }, 300);
+            });
+            
+            clickArea.appendChild(target);
+            
+            // Remove target after 1.5 seconds
+            setTimeout(() => {
+                if (target.parentNode) {
+                    target.parentNode.removeChild(target);
+                }
+            }, 1500);
+        }
+        
+        function startClickGame() {
+            if (clickGameActive) return;
+            
+            clickGameActive = true;
+            document.getElementById('startClickGame').textContent = 'Game Berlangsung...';
+            document.getElementById('startClickGame').disabled = true;
+            
+            // Create targets every 0.8 seconds
+            clickGameInterval = setInterval(createClickTarget, 800);
+            
+            // Start timer
+            clickTimer = setInterval(() => {
+                clickTime--;
+                document.getElementById('clickTime').textContent = clickTime;
+                
+                if (clickTime <= 0) {
+                    clearInterval(clickTimer);
+                    clearInterval(clickGameInterval);
+                    clickGameActive = false;
+                    document.getElementById('startClickGame').disabled = false;
+                    document.getElementById('startClickGame').textContent = 'Main Lagi';
+                    alert(`Waktu habis! Skor akhir: ${clickScore} (${clickTargets} target diklik)`);
+                }
+            }, 1000);
+        }
+        
+        // ============ GAME 4: DRAG & DROP ============
+        let dragScore = 0;
+        let dragCompleted = 0;
+        let dragAttempts = 3;
+        
+        const dragPuzzles = [
+            {
+                sentence: "Daripada galau, mending ... es krim",
+                words: ["makan", "minum", "beli", "jual"],
+                correct: "beli"
+            },
+            {
+                sentence: "Hidup itu seperti ... , kadang manis kadang asam",
+                words: ["coklat", "permen", "jeruk", "apel"],
+                correct: "jeruk"
+            },
+            {
+                sentence: "Jangan jadi ... di rumah orang",
+                words: ["tuan", "ratu", "tamu", "raja"],
+                correct: "tuan"
+            },
+            {
+                sentence: "Tak ada ... di atas roti",
+                words: ["mentega", "selai", "cinta", "uang"],
+                correct: "cinta"
+            },
+            {
+                sentence: "Lebih baik ... daripada menyesal",
+                options: ["mencoba", "diam", "lari", "tidur"],
+                correct: "mencoba"
+            }
+        ];
+        
+        function initDragDrop() {
+            dragScore = 0;
+            dragCompleted = 0;
+            dragAttempts = 3;
+            
+            document.getElementById('dragScore').textContent = dragScore;
+            document.getElementById('dragCompleted').textContent = `${dragCompleted}/5`;
+            document.getElementById('dragAttempts').textContent = dragAttempts;
+            
+            loadDragPuzzle();
+            
+            document.getElementById('checkDragGame').textContent = 'Periksa Jawaban';
+            document.getElementById('checkDragGame').onclick = checkDragAnswer;
+        }
+        
+        function loadDragPuzzle() {
+            const puzzle = dragPuzzles[dragCompleted];
+            
+            // Clear containers
+            const dragItems = document.getElementById('dragItems');
+            const dropZone = document.getElementById('dropZone');
+            
+            dragItems.innerHTML = '';
+            dropZone.innerHTML = '<div class="drop-slot" id="dropSlot">Seret kata ke sini</div>';
+            
+            // Create draggable words (shuffled)
+            const words = [...puzzle.words].sort(() => Math.random() - 0.5);
+            
+            words.forEach(word => {
+                const dragItem = document.createElement('div');
+                dragItem.className = 'drag-item';
+                dragItem.textContent = word;
+                dragItem.draggable = true;
+                dragItem.dataset.word = word;
+                
+                dragItem.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.dataset.word);
+                    this.style.opacity = '0.5';
+                });
+                
+                dragItem.addEventListener('dragend', function() {
+                    this.style.opacity = '1';
+                });
+                
+                dragItems.appendChild(dragItem);
+            });
+            
+            // Set up drop zone
+            const dropSlot = document.getElementById('dropSlot');
+            
+            dropSlot.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('active');
+            });
+            
+            dropSlot.addEventListener('dragleave', function() {
+                this.classList.remove('active');
+            });
+            
+            dropSlot.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('active');
+                
+                const word = e.dataTransfer.getData('text/plain');
+                this.textContent = word;
+                this.dataset.droppedWord = word;
+            });
+            
+            // Update sentence
+            document.querySelector('.game-area').insertAdjacentHTML('afterbegin', 
+                `<div style="text-align: center; font-size: 1.3rem; margin-bottom: 20px; background-color: white; padding: 15px; border-radius: 15px; width: 100%;">
+                    ${puzzle.sentence}
+                </div>`
+            );
+        }
+        
+        function checkDragAnswer() {
+            const droppedWord = document.getElementById('dropSlot').dataset.droppedWord;
+            const correctWord = dragPuzzles[dragCompleted].correct;
+            
+            if (!droppedWord) {
+                alert('Seret kata terlebih dahulu!');
+                return;
+            }
+            
+            if (droppedWord === correctWord) {
+                // Correct
+                dragScore += 20;
+                dragCompleted++;
+                document.getElementById('dragScore').textContent = dragScore;
+                document.getElementById('dragCompleted').textContent = `${dragCompleted}/5`;
+                
+                if (dragCompleted >= 5) {
+                    alert(`Selamat! Kamu menyelesaikan semua puzzle! Skor akhir: ${dragScore}`);
+                    initDragDrop();
+                } else {
+                    setTimeout(() => {
+                        loadDragPuzzle();
+                    }, 1000);
+                }
+            } else {
+                // Wrong
+                dragAttempts--;
+                document.getElementById('dragAttempts').textContent = dragAttempts;
+                
+                if (dragAttempts <= 0) {
+                    alert(`Kesempatan habis! Skor akhir: ${dragScore}`);
+                    initDragDrop();
+                } else {
+                    alert(`Salah! Coba lagi. Kesempatan tersisa: ${dragAttempts}`);
+                }
+            }
+        }
+        
+        // ============ GAME 5: REACTION TEST ============
+        let reactionScore = 0;
+        let reactionTime = 0;
+        let reactionAttempts = 0;
+        let reactionStartTime = 0;
+        let reactionGameActive = false;
+        let reactionTimeout;
+        
+        function initReactionTest() {
+            reactionScore = 0;
+            reactionTime = 0;
+            reactionAttempts = 0;
+            
+            document.getElementById('reactionScore').textContent = reactionScore;
+            document.getElementById('reactionTime').textContent = '0.00s';
+            document.getElementById('reactionAttempts').textContent = `${reactionAttempts}/10`;
+            
+            const reactionButton = document.getElementById('reactionButton');
+            reactionButton.style.display = 'none';
+            
+            document.getElementById('startReactionGame').textContent = 'Mulai Tes';
+            document.getElementById('startReactionGame').onclick = startReactionGame;
+        }
+        
+        function startReactionGame() {
+            if (reactionGameActive) return;
+            
+            reactionGameActive = true;
+            reactionAttempts = 0;
+            reactionScore = 0;
+            
+            document.getElementById('reactionScore').textContent = reactionScore;
+            document.getElementById('reactionAttempts').textContent = `${reactionAttempts}/10`;
+            document.getElementById('startReactionGame').textContent = 'Tes Berlangsung...';
+            document.getElementById('startReactionGame').disabled = true;
+            
+            startReactionRound();
+        }
+        
+        function startReactionRound() {
+            if (reactionAttempts >= 10) {
+                endReactionGame();
+                return;
+            }
+            
+            const reactionButton = document.getElementById('reactionButton');
+            reactionButton.style.display = 'none';
+            
+            // Random delay before showing button (1-3 seconds)
+            const delay = Math.random() * 2000 + 1000;
+            
+            reactionTimeout = setTimeout(() => {
+                // Show button at random position
+                const reactionArea = document.getElementById('reactionArea');
+                const size = reactionArea.getBoundingClientRect();
+                
+                const x = Math.random() * (size.width - 150);
+                const y = Math.random() * (size.height - 80);
+                
+                reactionButton.style.left = `${x}px`;
+                reactionButton.style.top = `${y}px`;
+                reactionButton.style.display = 'block';
+                
+                // Record start time
+                reactionStartTime = Date.now();
+                
+                // Set timeout to hide button if not clicked (3 seconds)
+                setTimeout(() => {
+                    if (reactionButton.style.display === 'block') {
+                        reactionButton.style.display = 'none';
+                        reactionAttempts++;
+                        document.getElementById('reactionAttempts').textContent = `${reactionAttempts}/10`;
+                        
+                        if (reactionAttempts < 10) {
+                            setTimeout(startReactionRound, 1000);
+                        } else {
+                            endReactionGame();
+                        }
+                    }
+                }, 3000);
+            }, delay);
+        }
+        
+        // Reaction button click event
+        document.getElementById('reactionButton').addEventListener('click', function() {
+            if (!reactionGameActive) return;
+            
+            // Calculate reaction time
+            const endTime = Date.now();
+            const time = (endTime - reactionStartTime) / 1000;
+            
+            // Update reaction time
+            reactionTime = time;
+            document.getElementById('reactionTime').textContent = `${time.toFixed(2)}s`;
+            
+            // Calculate score (faster = more points)
+            let points = Math.max(1, Math.floor(50 - (time * 10)));
+            reactionScore += points;
+            
+            // Update UI
+            document.getElementById('reactionScore').textContent = reactionScore;
+            
+            // Hide button
+            this.style.display = 'none';
+            
+            // Next round
+            reactionAttempts++;
+            document.getElementById('reactionAttempts').textContent = `${reactionAttempts}/10`;
+            
+            if (reactionAttempts < 10) {
+                setTimeout(startReactionRound, 1000);
+            } else {
+                endReactionGame();
+            }
+        });
+        
+        function endReactionGame() {
+            clearTimeout(reactionTimeout);
+            reactionGameActive = false;
+            
+            const reactionButton = document.getElementById('reactionButton');
+            reactionButton.style.display = 'none';
+            
+            document.getElementById('startReactionGame').disabled = false;
+            document.getElementById('startReactionGame').textContent = 'Main Lagi';
+            
+            const avgTime = reactionAttempts > 0 ? (reactionTime / reactionAttempts).toFixed(2) : 0;
+            alert(`Tes selesai! Skor: ${reactionScore}, Rata-rata waktu reaksi: ${avgTime}s`);
+        }
+        
+        // ============ GAME 6: TYPING GAME ============
+        let typingScore = 0;
+        let typingTime = 60;
+        let typingWords = 0;
+        let typingGameActive = false;
+        let typingTimer;
+        let currentText = '';
+        let typingStartTime = 0;
+        
+        const typingTexts = [
+            "Hidup itu singkat, jadi jangan buang waktu untuk hal yang tidak penting",
+            "Tertawa adalah obat terbaik untuk menghilangkan stres dan kecemasan",
+            "Jadilah diri sendiri karena menjadi orang lain itu sudah ada yang punya",
+            "Cinta datang tanpa diundang dan pergi tanpa pamit, seperti tamu tak diundang",
+            "Hari ini adalah kesempatan untuk menjadi lebih baik dari kemarin",
+            "Mimpi tidak akan terwujud jika hanya dipikirkan, harus diwujudkan dengan tindakan",
+            "Kebahagiaan sederhana seringkali berasal dari hal-hal kecil di sekitar kita",
+            "Jangan bandingkan hidupmu dengan orang lain, setiap orang punya cerita sendiri",
+            "Kesalahan adalah bagian dari proses belajar, jangan takut untuk mencoba",
+            "Keindahan sejati berasal dari dalam hati, bukan dari penampilan luar"
+        ];
+        
+        function initTypingGame() {
+            typingScore = 0;
+            typingTime = 60;
+            typingWords = 0;
+            typingGameActive = false;
+            
+            document.getElementById('typingScore').textContent = typingScore;
+            document.getElementById('typingTime').textContent = typingTime;
+            document.getElementById('typingWords').textContent = typingWords;
+            document.getElementById('typingAccuracy').textContent = '100%';
+            
+            // Load random text
+            const randomIndex = Math.floor(Math.random() * typingTexts.length);
+            currentText = typingTexts[randomIndex];
+            document.getElementById('typingText').textContent = currentText;
+            
+            // Clear input
+            document.getElementById('typingInput').value = '';
+            document.getElementById('typingInput').disabled = false;
+            
+            document.getElementById('startTypingGame').textContent = 'Mulai Mengetik';
+            document.getElementById('startTypingGame').onclick = startTypingGame;
+        }
+        
+        function startTypingGame() {
+            if (typingGameActive) return;
+            
+            typingGameActive = true;
+            typingStartTime = Date.now();
+            
+            document.getElementById('startTypingGame').textContent = 'Sedang Mengetik...';
+            document.getElementById('startTypingGame').disabled = true;
+            document.getElementById('typingInput').disabled = false;
+            document.getElementById('typingInput').focus();
+            
+            // Start timer
+            typingTimer = setInterval(() => {
+                typingTime--;
+                document.getElementById('typingTime').textContent = typingTime;
+                
+                if (typingTime <= 0) {
+                    endTypingGame();
+                }
+            }, 1000);
+            
+            // Setup input event
+            const typingInput = document.getElementById('typingInput');
+            typingInput.addEventListener('input', checkTypingProgress);
+        }
+        
+        function checkTypingProgress() {
+            const input = document.getElementById('typingInput').value;
+            const original = currentText;
+            
+            // Calculate accuracy
+            let correctChars = 0;
+            const length = Math.min(input.length, original.length);
+            
+            for (let i = 0; i < length; i++) {
+                if (input[i] === original[i]) {
+                    correctChars++;
+                }
+            }
+            
+            const accuracy = input.length > 0 ? Math.round((correctChars / input.length) * 100) : 100;
+            document.getElementById('typingAccuracy').textContent = `${accuracy}%`;
+            
+            // Check if text is completed
+            if (input === original) {
+                // Calculate time taken
+                const endTime = Date.now();
+                const timeTaken = (endTime - typingStartTime) / 1000; // in seconds
+                
+                // Calculate score (faster = more points)
+                let points = Math.max(10, Math.floor(100 - timeTaken));
+                typingScore += points;
+                typingWords++;
+                
+                // Update UI
+                document.getElementById('typingScore').textContent = typingScore;
+                document.getElementById('typingWords').textContent = typingWords;
+                
+                // Load new text
+                const randomIndex = Math.floor(Math.random() * typingTexts.length);
+                currentText = typingTexts[randomIndex];
+                document.getElementById('typingText').textContent = currentText;
+                
+                // Clear input
+                document.getElementById('typingInput').value = '';
+                document.getElementById('typingAccuracy').textContent = '100%';
+                
+                // Reset start time
+                typingStartTime = Date.now();
+            }
+        }
+        
+        function endTypingGame() {
+            clearInterval(typingTimer);
+            typingGameActive = false;
+            
+            document.getElementById('startTypingGame').disabled = false;
+            document.getElementById('startTypingGame').textContent = 'Main Lagi';
+            document.getElementById('typingInput').disabled = true;
+            
+            const wpm = typingWords > 0 ? Math.round((typingWords * 60) / (60 - typingTime)) : 0;
+            alert(`Waktu habis! Skor: ${typingScore}, Kata per menit: ${wpm}`);
+        }
+        
+        // ============ INITIALIZE ============
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all games
+            initEmojiGame();
+            initWordPuzzle();
+            initClickFrenzy();
+            initDragDrop();
+            initReactionTest();
+            initTypingGame();
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Game timers object
+            window.gameTimers = {
+                emojiMatch: null,
+                clickFrenzy: null,
+                typingGame: null
+            };
+        });
+    </script>
+</body>
+</html>

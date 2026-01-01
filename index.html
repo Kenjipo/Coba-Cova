@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl's Fun Zone - Tempat Ceria & Lucu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', cursive, sans-serif;
+        }
+
+        :root {
+            --pink: #ffb6c1;
+            --light-pink: #ffe4e9;
+            --hot-pink: #ff69b4;
+            --purple: #dda0dd;
+            --light-purple: #e6d4ff;
+            --yellow: #fffacd;
+            --mint: #b2f7c6;
+            --blue: #add8e6;
+        }
+
+        body {
+            background-color: var(--light-pink);
+            color: #5a3a5a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            padding: 20px 0;
+            border-bottom: 5px dashed var(--hot-pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--hot-pink);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: white;
+            text-shadow: 2px 2px 0px var(--purple);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a:hover, nav a.active {
+            background-color: white;
+            color: var(--hot-pink);
+            transform: translateY(-3px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(to right, var(--light-purple), var(--yellow));
+            border-radius: 0 0 50% 50% / 0 0 30px 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--hot-pink);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #5a3a5a;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--hot-pink);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+            background-color: #ff1493;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .floating:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floating:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+        .floating:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 2s; }
+        .floating:nth-child(4) { bottom: 25%; right: 5%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            color: var(--hot-pink);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--pink), var(--purple));
+            border-radius: 5px;
+        }
+
+        /* Funny Quotes */
+        .quotes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .quote-card {
+            background: linear-gradient(135deg, var(--light-purple), var(--mint));
+            padding: 25px;
+            border-radius: 20px;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .quote-card i {
+            font-size: 2rem;
+            color: var(--hot-pink);
+            margin-bottom: 15px;
+        }
+
+        .quote-card p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .quote-card .author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--hot-pink);
+        }
+
+        /* Interactive Games */
+        .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .game-card {
+            width: 280px;
+            background: linear-gradient(135deg, var(--yellow), var(--blue));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            color: var(--hot-pink);
+            margin-bottom: 20px;
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #5a3a5a;
+        }
+
+        .game-card button {
+            background-color: var(--hot-pink);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .game-card button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        /* Mood Selector */
+        .mood-selector {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, var(--light-pink), var(--light-purple));
+            border-radius: 20px;
+        }
+
+        .moods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .mood {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mood:hover {
+            transform: scale(1.1);
+        }
+
+        .mood i {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .mood.active {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 5px var(--hot-pink);
+        }
+
+        .mood-result {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .mood-result.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 5px dashed var(--hot-pink);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: var(--hot-pink);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background-color: var(--hot-pink);
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--hot-pink);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 60%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            80% { transform: translateY(-5px); }
+        }
+
+        .bounce {
+            animation: bounce 1s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .quote-card, .game-card {
+                width: 100%;
+            }
+            
+            .mood {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .mood i {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <h1>Girl's Fun Zone</h1>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Beranda</a></li>
+                    <li><a href="#quotes">Quotes Lucu</a></li>
+                    <li><a href="#games">Permainan</a></li>
+                    <li><a href="#mood">Pilih Mood</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Selamat Datang di Dunia Ceria!</h2>
+            <p>Tempat di mana kamu bisa tertawa, bersenang-senang, dan menikmati momen bahagia dengan konten lucu dan interaktif yang dibuat khusus untuk perempuan.</p>
+            <button class="hero-btn" id="surpriseBtn">Klik untuk Kejutan!</button>
+            
+            <div class="floating-elements">
+                <div class="floating">💖</div>
+                <div class="floating">🌸</div>
+                <div class="floating">😊</div>
+                <div class="floating">🎀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Funny Quotes Section -->
+        <section id="quotes">
+            <h2>Quotes Lucu Hari Ini</h2>
+            <div class="quotes-container">
+                <div class="quote-card" onclick="copyQuote(this)">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Hidup itu seperti lipstik, harus diisi ulang terus biar tetap cantik!"</p>
+                    <div class="author">- Unknown</div>
+                </div>
+                <div class="quote-card" onclick="copyQuote(this)">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Jangan terlalu serius, nanti cepat tua. Mending ketawa, biar awet muda!"</p>
+                    <div class="author">- Cewek Bijak</div>
+                </div>
+                <div class="quote-card" onclick="copyQuote(this)">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Daripada galau mikirin dia yang gak jelas, mending beli es krim yang rasanya jelas!"</p>
+                    <div class="author">- Sahabat Baik</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Games Section -->
+        <section id="games">
+            <h2>Permainan Interaktif</h2>
+            <div class="games-container">
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3>Putaran Keberuntungan</h3>
+                    <p>Putar roda untuk mendapatkan pesan lucu dan kejutan!</p>
+                    <button onclick="spinWheel()">Putar Sekarang</button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Warna Mood-mu</h3>
+                    <p>Ubah warna background sesuai dengan mood kamu hari ini!</p>
+                    <button onclick="changeBackground()">Ubah Warna</button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Kotak Kejutan</h3>
+                    <p>Buka kotak untuk mendapatkan pesan spesial dan hadiah virtual!</p>
+                    <button onclick="openSurprise()">Buka Kotak</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Selector Section -->
+        <section id="mood">
+            <h2>Hari ini kamu lagi mood apa?</h2>
+            <div class="mood-selector">
+                <p>Pilih emoji yang sesuai dengan perasaanmu hari ini:</p>
+                <div class="moods">
+                    <div class="mood" data-mood="happy">
+                        <i class="fas fa-laugh-beam"></i>
+                        <span>Senang</span>
+                    </div>
+                    <div class="mood" data-mood="silly">
+                        <i class="fas fa-grin-tongue-wink"></i>
+                        <span>Iseng</span>
+                    </div>
+                    <div class="mood" data-mood="loved">
+                        <i class="fas fa-heart"></i>
+                        <span>Dicintai</span>
+                    </div>
+                    <div class="mood" data-mood="relaxed">
+                        <i class="fas fa-smile"></i>
+                        <span>Santai</span>
+                    </div>
+                    <div class="mood" data-mood="playful">
+                        <i class="fas fa-grin-stars"></i>
+                        <span>Lincah</span>
+                    </div>
+                </div>
+                <div class="mood-result" id="moodResult">
+                    <!-- Hasil mood akan ditampilkan di sini -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Girl's Fun Zone</h3>
+                    <p>Tempat ceria untuk perempuan yang ingin tertawa dan bersenang-senang!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/syidd.0/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="http://youtube.com/channel/UC9QDi-xjTgjgVB1uGxiunJA"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p><i class="fas fa-envelope"></i> PTD.Rasyid.022@gmail.com</p>
+                    <p><i class="fas fa-heart"></i> Selalu ada untuk membuatmu tersenyum</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Girl's Fun Zone. Dibuat dengan <i class="fas fa-heart" style="color: #ff69b4;"></i> untuk perempuan ceria!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent">
+                <!-- Konten modal akan dimuat di sini -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+        
+        // Surprise button
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const surprises = [
+            "Kamu cantik hari ini! 😊",
+            "Jangan lupa tersenyum, karena senyummu itu indah! 💖",
+            "Hari ini adalah hari yang baik untuk menjadi versi terbaik dari dirimu! 🌸",
+            "Ingat, kamu kuat, kamu mampu, dan kamu berharga! 💪",
+            "Jangan bandingkan dirimu dengan orang lain, kamu itu unik dan spesial! ✨"
+        ];
+        
+        surpriseBtn.addEventListener('click', () => {
+            const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+            showModal("💝 Kejutan Spesial! 💝", randomSurprise);
+            surpriseBtn.classList.add('bounce');
+            setTimeout(() => {
+                surpriseBtn.classList.remove('bounce');
+            }, 1000);
+        });
+        
+        // Copy quote function
+        function copyQuote(quoteCard) {
+            const quoteText = quoteCard.querySelector('p').innerText;
+            navigator.clipboard.writeText(quoteText).then(() => {
+                const originalContent = quoteCard.innerHTML;
+                quoteCard.innerHTML = '<i class="fas fa-check"></i><p>Quote berhasil disalin!</p>';
+                quoteCard.style.background = 'linear-gradient(135deg, #b2f7c6, #add8e6)';
+                
+                setTimeout(() => {
+                    quoteCard.innerHTML = originalContent;
+                    quoteCard.style.background = 'linear-gradient(135deg, var(--light-purple), var(--mint))';
+                }, 1500);
+            });
+        }
+        
+        // Spin wheel game
+        function spinWheel() {
+            const messages = [
+                "Kamu mendapatkan voucher es krim gratis! 🍦",
+                "Selamat! Kamu mendapatkan hari libur tambahan! 🎉",
+                "Kamu berhak mendapatkan pujian: Kamu hebat! 🌟",
+                "Hadiahmu: Pelukan virtual dari kami! 🤗",
+                "Kamu menang! Senyuman terindah hari ini adalah milikmu! 😊"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            showModal("🎡 Hasil Putaran Keberuntungan 🎡", randomMessage);
+        }
+        
+        // Change background color
+        function changeBackground() {
+            const colors = ['#ffb6c1', '#ffe4e9', '#fffacd', '#e6d4ff', '#b2f7c6', '#add8e6'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+            
+            // Kembalikan ke warna semula setelah 5 detik
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+            }, 5000);
+            
+            showModal("🎨 Warna Baru!", `Background berubah menjadi ${randomColor} selama 5 detik!`);
+        }
+        
+        // Open surprise box
+        function openSurprise() {
+            const surprises = [
+                {title: "🎁 Hadiah Virtual!", message: "Kamu mendapatkan tiket menonton film gratis! Nikmati waktu bersantaimu!"},
+                {title: "✨ Pesan Spesial!", message: "Hari ini adalah hari yang tepat untuk melakukan hal-hal yang membuatmu bahagia!"},
+                {title: "💌 Surat Cinta Virtual!", message: "Untuk dirimu yang kuat dan cantik, kamu layak mendapatkan yang terbaik!"},
+                {title: "🌸 Bunga Virtual!", message: "Ini buket bunga virtual untukmu! Semoga harimu semanis senyumanmu!"}
+            ];
+            
+            const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+            showModal(randomSurprise.title, randomSurprise.message);
+        }
+        
+        // Mood selector
+        const moods = document.querySelectorAll('.mood');
+        const moodResult = document.getElementById('moodResult');
+        
+        const moodMessages = {
+            happy: {
+                title: "Yay! Kamu lagi senang! 😊",
+                message: "Bagus! Manfaatkan energi positifmu untuk melakukan hal-hal menyenangkan hari ini! Jangan lupa bagikan kebahagiaanmu dengan orang lain juga!"
+            },
+            silly: {
+                title: "Hihi, lagi iseng ya? 😜",
+                message: "Waktunya untuk sedikit kenakalan yang sehat! Bercanda dengan teman atau coba resep masakan baru yang unik. Nikmati hari isengmu!"
+            },
+            loved: {
+                title: "Aww, kamu merasa dicintai! 💖",
+                message: "Luar biasa! Ingatlah bahwa kamu memang layak dicintai. Bagikan perasaan hangat ini dengan orang-orang terdekatmu hari ini!"
+            },
+            relaxed: {
+                title: "Santai dan menikmati hari ya? 😌",
+                message: "Sempurna! Nikmati momen santaimu. Baca buku favorit, minum teh hangat, atau sekedar bermeditasi. Kamu pantas mendapatkan waktu untuk dirimu sendiri."
+            },
+            playful: {
+                title: "Wah, lagi energik dan lincah! 🎉",
+                message: "Sempurna untuk mencoba hal baru atau olahraga yang menyenangkan! Manfaatkan energimu untuk mengeksplorasi sesuatu yang menarik hari ini."
+            }
+        };
+        
+        moods.forEach(mood => {
+            mood.addEventListener('click', function() {
+                // Remove active class from all moods
+                moods.forEach(m => m.classList.remove('active'));
+                
+                // Add active class to clicked mood
+                this.classList.add('active');
+                
+                // Get mood type
+                const moodType = this.getAttribute('data-mood');
+                
+                // Display result
+                moodResult.innerHTML = `
+                    <h3>${moodMessages[moodType].title}</h3>
+                    <p>${moodMessages[moodType].message}</p>
+                    <p><em>Ingat: Tidak peduli mood-mu hari ini, kamu tetap luar biasa!</em></p>
+                `;
+                
+                // Show result with animation
+                moodResult.classList.add('show');
+            });
+        });
+        
+        // Modal functions
+        const modal = document.getElementById('myModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalContent = document.getElementById('modalContent');
+        
+        function showModal(title, message) {
+            modalContent.innerHTML = `
+                <h2 style="color: var(--hot-pink); margin-bottom: 15px;">${title}</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">${message}</p>
+                <button class="hero-btn" onclick="closeModalFunc()">Mengerti!</button>
+            `;
+            modal.style.display = 'flex';
+        }
+        
+        function closeModalFunc() {
+            modal.style.display = 'none';
+        }
+        
+        closeModal.addEventListener('click', closeModalFunc);
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModalFunc();
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation to sections when scrolling
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
